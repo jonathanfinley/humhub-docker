@@ -81,6 +81,7 @@ RUN tar xzf v${HUMHUB_VERSION}.tar.gz && \
 WORKDIR /usr/src/humhub
 
 RUN composer install --no-ansi --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader && \
+    ln -s /usr/bin/php8 /usr/bin/php && \
     chmod +x protected/yii && \
     chmod +x protected/yii.bat && \
     npm install grunt && \
